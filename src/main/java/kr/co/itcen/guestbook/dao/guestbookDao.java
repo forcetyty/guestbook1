@@ -118,7 +118,7 @@ public class guestbookDao {
 		return result;
 	}
 	
-	public void delete(int no) {
+	public void delete(guestbookVo vo) {
 		
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -126,8 +126,11 @@ public class guestbookDao {
 		try {
 			connection = getConnection();
 
-			String sql = "delete from guestbook where no =" + no;
+			String sql = "delete from guestbook where no = ? and password = ?";
+			
 			pstmt = connection.prepareStatement(sql);
+			pstmt.setLong(1, vo.getNo());
+			pstmt.setString(2, vo.getPassword());
 
 			pstmt.executeUpdate();
 

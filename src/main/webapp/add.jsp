@@ -19,5 +19,6 @@
 	new guestbookDao().insert(vo);
 	
 	//이 경로는 index.jsp로 이동한다.
+	//Redirect를 통해서 웹 브라우저에서 표현되는것!!!
 	response.sendRedirect(request.getContextPath());
 %>
