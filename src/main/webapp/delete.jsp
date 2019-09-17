@@ -1,5 +1,6 @@
-<%@page import="kr.co.itcen.guestbook.dao.guestbookDao"%>
-<%@page import="kr.co.itcen.guestbook.vo.guestbookVo"%>
+<%@page import="kr.co.itcen.guestbook.vo.GuestbookVo"%>
+<%@page import="kr.co.itcen.guestbook.dao.GuestbookDao"%>
+
 
 <%
 	request.setCharacterEncoding("utf-8");
@@ -18,11 +19,11 @@
 	//	vo.setContents(contents);
 	
 	//비즈니스 부분!!!
-	guestbookVo vo = new guestbookVo();
+	GuestbookVo vo = new GuestbookVo();
 	vo.setNo(Long.parseLong(no));
 	vo.setPassword(password);
 	
-	new guestbookDao().delete(vo);
+	new GuestbookDao().delete(vo);
 	
 	//이 경로는 index.jsp로 이동한다.
 	response.sendRedirect(request.getContextPath());

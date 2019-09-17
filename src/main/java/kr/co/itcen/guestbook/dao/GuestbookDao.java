@@ -9,13 +9,13 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import kr.co.itcen.guestbook.vo.guestbookVo;
+import kr.co.itcen.guestbook.vo.GuestbookVo;
 
-public class guestbookDao {
+public class GuestbookDao {
 	
 	//insert into guestbook values(null, '김철수', '1234', '저두요반가워요', now());
 	
-	public Boolean insert(guestbookVo vo) {
+	public Boolean insert(GuestbookVo vo) {
 		Boolean result = false;
 
 		Connection connection = null;
@@ -66,8 +66,8 @@ public class guestbookDao {
 		return result;
 	}
 
-	public List<guestbookVo> getList() {
-		List<guestbookVo> result = new ArrayList<guestbookVo>();
+	public List<GuestbookVo> getList() {
+		List<GuestbookVo> result = new ArrayList<GuestbookVo>();
 
 		Connection connection = null;
 		PreparedStatement pstmt = null;
@@ -88,7 +88,7 @@ public class guestbookDao {
 				String contents = rs.getString(3);
 				String date = rs.getString(4);
 
-				guestbookVo vo = new guestbookVo();
+				GuestbookVo vo = new GuestbookVo();
 
 				vo.setNo(no);
 				vo.setName(name);
@@ -118,7 +118,7 @@ public class guestbookDao {
 		return result;
 	}
 	
-	public void delete(guestbookVo vo) {
+	public void delete(GuestbookVo vo) {
 		
 		Connection connection = null;
 		PreparedStatement pstmt = null;

@@ -1,5 +1,5 @@
 package kr.co.itcen.guestbook.daotest;
 
-public class guestbookDaoTest {
+public class GuestbookDaoTest {
 
 }

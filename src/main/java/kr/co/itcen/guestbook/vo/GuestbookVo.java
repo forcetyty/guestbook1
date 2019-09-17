@@ -1,6 +1,6 @@
 package kr.co.itcen.guestbook.vo;
 
-public class guestbookVo {
+public class GuestbookVo {
 
 	private Long no;
 	private String name;

@@ -1,9 +1,10 @@
-<%@page import="kr.co.itcen.guestbook.dao.guestbookDao"%>
-<%@page import="kr.co.itcen.guestbook.vo.guestbookVo"%>
+<%@page import="kr.co.itcen.guestbook.vo.GuestbookVo"%>
+<%@page import="kr.co.itcen.guestbook.dao.GuestbookDao"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List"%>
 <%
-	List<guestbookVo> list = new guestbookDao().getList();
+	List<GuestbookVo> list = new GuestbookDao().getList();
 %>
 <html>
 <head>
@@ -11,7 +12,7 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="<%=request.getContextPath() %>/add.jsp" method="post">
+	<form action="<%=request.getContextPath()%>/add.jsp" method="post">
 	<table border=1 width=500>
 		<tr>
 			<td>이름</td><td><input type="text" name="name"></td>
@@ -28,11 +29,11 @@
 	<br>
 	
 	<%
-		int count = list.size();
-		int index = 0;
-		
-		for (guestbookVo vo : list){
-	%>
+			int count = list.size();
+				int index = 0;
+				
+				for (GuestbookVo vo : list){
+		%>
 	<table width=510 border=1>
 		<tr>
 			<td>[<%=count-index++%>]</td>

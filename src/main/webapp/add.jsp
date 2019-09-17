@@ -1,5 +1,6 @@
-<%@page import="kr.co.itcen.guestbook.dao.guestbookDao"%>
-<%@page import="kr.co.itcen.guestbook.vo.guestbookVo"%>
+<%@page import="kr.co.itcen.guestbook.vo.GuestbookVo"%>
+<%@page import="kr.co.itcen.guestbook.dao.GuestbookDao"%>
+
 
 <%
 	request.setCharacterEncoding("utf-8");
@@ -9,14 +10,14 @@
 	String contents = request.getParameter("message");
 	
 	
-	guestbookVo vo = new guestbookVo();
+	GuestbookVo vo = new GuestbookVo();
 	
 	vo.setName(name);
 	vo.setPassword(password);
 	vo.setContents(contents);
 	
 	
-	new guestbookDao().insert(vo);
+	new GuestbookDao().insert(vo);
 	
 	//이 경로는 index.jsp로 이동한다.
 	//Redirect를 통해서 웹 브라우저에서 표현되는것!!!
